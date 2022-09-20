@@ -5,7 +5,7 @@
 |Comando|Notas|
 |:----------|:-----------|
 |`ng --version`|Comprobar la versión de Angular CLI.|
-|`ng new nombre_proyecto`|Crear un nuevo proyecto.|
+|`ng new nombre_proyecto`|Crear un nuevo proyecto en el directorio actual.|
 |||
 |||
 |||
