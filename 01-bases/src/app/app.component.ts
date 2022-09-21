@@ -2,6 +2,11 @@
 import { Component } from '@angular/core';
 
 /**
+ * Los decoradores de Angular JS es un modo de añadir metadatos a declaraciones de clase para ser usados por inyecciones de dependencia o compilaciones de directivas. 
+ * Un decorador angular es una clase especial de declaración que puede acoplarse a una clase, método, propiedad o parámetro.
+ */
+
+/**
  * selector: Nombre del componente (este en concreto es el componente principal llamado en index.html)
  * 
  * templateUrl: Path del template HTML del componente
