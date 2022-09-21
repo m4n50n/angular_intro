@@ -15,9 +15,9 @@ import { ListadoComponent } from './listado/listado.component';
     exports: [
         ListadoComponent
     ],
-    /* Los imports son todos los módulos importados */
+    /* Los imports son todos los módulos que se importarán a este módulo */
     imports: [
-        CommonModule
+        CommonModule // Este módulo es necesario puesto que ofrece directivas de Angular como ngFor, ngIf, etc... y si no lo importamos no funcionarán
     ]
 })
 
