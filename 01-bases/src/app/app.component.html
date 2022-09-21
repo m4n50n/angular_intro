@@ -1,12 +1,1 @@
-<!--
-    Dentro de las dobles llaves podremos imprimir código JavaScript (como por ejemplo {{ 1 + 1  }}) o el valor de alguna propiedad de la clase (en este caso "titulo" es una propiedad de la clase AppComponent)    
--->
-<h1>{{ titulo }}</h1>
-<h3>La base es {{ base }}</h3>
-
-<!-- Los eventos son definidos con paréntesis. Dos formas de hacerlo: -->
-<!--<button (click)="numero = numero - 1">- 1</button> En este caso no hace falta poner this.numero, puesto que al ser el template del componente coge directamente el valor de la propiedad numero -->
-<button (click)="operar(-base)">- {{ base }}</button>
-<span>{{ numero }}</span>
-<!-- <button (click)="operar(base)">+ {{ base }}</button> -->
-<button (click)="numero = numero + base">+ {{ base }}</button>
+<!-- <app-contador></app-contador> -->

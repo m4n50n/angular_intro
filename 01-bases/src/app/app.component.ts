@@ -25,12 +25,4 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.css']
 })
 
-export class AppComponent {
-  titulo: string = 'Contador App';
-  numero: number = 0;
-  base: number = 5;
-
-  operar(num: number) {
-    this.numero += num;
-  }
-}
+export class AppComponent { }
