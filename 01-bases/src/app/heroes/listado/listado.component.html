@@ -1,15 +1,21 @@
 <p>Listado de héroes:</p>
 
 <ul>
-    <!-- la propiedad heroes debe ser algo iterable, por ejemplo un array -->
+  <!-- la propiedad heroes debe ser algo iterable, por ejemplo un array -->
   <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }}.- {{ heroe }}</li>
 </ul>
 
-<div *ngIf="heroeBorrado.length !== 0">  
-<!-- <div *ngIf="heroeBorrado"> Esto tal cual también funcionaría, ya que angular daría como "false" un string vacio  -->
+<div *ngIf="heroeBorrado.length !== 0; else noBorrado">
+  <!-- noBorrado es una referencia local (siempre del lado del template .html) que usaremos con el componente ng-template -->
+  <!-- <div *ngIf="heroeBorrado"> Esto tal cual también funcionaría, ya que angular daría como "false" un string vacio  -->
   <small>Se ha borrado el héroe '{{ heroeBorrado }}'</small>
 </div>
 
-<br>
+<ng-template #noBorrado>
+  <!-- ng-template es un componente propio de Angular que mostrará un contenido basado en una condición -->
+  <small>No ha borrado nada</small>
+</ng-template>
+
+<br />
 
 <button (click)="borrarHeroe()">Borrar</button>
