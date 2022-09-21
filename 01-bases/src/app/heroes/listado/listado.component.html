@@ -2,7 +2,7 @@
 
 <ul>
   <!-- la propiedad heroes debe ser algo iterable, por ejemplo un array -->
-  <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }}.- {{ heroe }}</li>
+  <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }} - {{ heroe }}</li>
 </ul>
 
 <div *ngIf="heroeBorrado.length !== 0; else noBorrado">
