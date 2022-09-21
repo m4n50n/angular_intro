@@ -1,12 +1,15 @@
 <p>Listado de héroes:</p>
 
-<div>
-  <h3>Héroe borrado</h3>
-  <span>{{ heroeBorrado }}</span>
-</div>
-
-<button (click)="borrarHeroe()">Borrar</button>
-
 <ul>
+    <!-- la propiedad heroes debe ser algo iterable, por ejemplo un array -->
   <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }}.- {{ heroe }}</li>
 </ul>
+
+<div *ngIf="heroeBorrado.length !== 0">  
+<!-- <div *ngIf="heroeBorrado"> Esto tal cual también funcionaría, ya que angular daría como "false" un string vacio  -->
+  <small>Se ha borrado el héroe '{{ heroeBorrado }}'</small>
+</div>
+
+<br>
+
+<button (click)="borrarHeroe()">Borrar</button>
