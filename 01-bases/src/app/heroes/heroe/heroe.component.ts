@@ -10,11 +10,19 @@ export class HeroeComponent {
     edad: number = 45;
 
     /* Getter */
-    get nombreCapitalizado() {
+    get nombreCapitalizado():string {
         return this.nombre.toUpperCase();
     }
 
     obtenerNombre(): string {
-        return `${this.nombre} / Edad: ${this.edad} años.`
+        return `${this.nombre} / Edad: ${this.edad} años.`;
+    }
+
+    cambiarNombre():void { // No se retornará nada (void)
+        this.nombre = "Spiderman";
+    }
+
+    cambiarEdad():void {
+        this.edad = 30;
     }
 }
