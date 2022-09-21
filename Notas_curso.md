@@ -7,7 +7,7 @@
 |`ng --version`|Comprobar la versión de Angular CLI.<br>https://angular.io/cli/version|
 |`ng new nombre_proyecto`|Crear un nuevo proyecto en el directorio actual.<br>https://angular.io/cli/new|
 |`ng serve`|Construir e iniciar el proyecto. Con `-o` ordenamos que se abra al acabar.<br>https://angular.io/cli/serve|
-|||
+|`ng generate component heroes/listado` o con parámetros abreviados `ng g c heroes/listado`|Crear un componente automáticamente (debemos estar situados en el directorio raíz del proyecto en la terminal). En este caso crearía el componente listado dentro de la carpeta `/app/heroes`. Esto creará todos los ficheros necesarios para el nuevo componente y además actualizará el fichero `app-modules.ts`|
 |||
 
 - Explicación breve de algunos ficheros del directorio raíz del proyecto:
@@ -37,3 +37,4 @@
 |`polyfills.ts`|Ayuda a tener una mejor compatibilidad con los navegadores web. Por lo normal no debe tocarse.|
 |`styles.css`|Estilos globales que se aplicarán a nivel general en todo el proyecto.|
 |`test.ts`|Configuración del entorno de pruebas.|
+  
