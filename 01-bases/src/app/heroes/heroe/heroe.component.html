@@ -1,0 +1,18 @@
+<h1>{{ nombre }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ nombre }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ edad }}</dd>
+
+  <td>Descripción:</td>
+  <dd>{{ obtenerNombre() }}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{ nombreCapitalizado }}</dd> <!-- Al ser un getter, se llama como variable y no como función -->
+</dl>
+
+<button>Cambiar héroe</button>
+<button>Cambiar edad</button>

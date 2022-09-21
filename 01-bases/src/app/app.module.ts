@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ContadorComponent } from './contador-numeros.component';
+import { ContadorComponent } from './contador-numeros/contador-numeros.component';
+import { HeroeComponent } from './heroes/heroe/heroe.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ // Declaración de los components creados
     AppComponent,
-    ContadorComponent
+    ContadorComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule
