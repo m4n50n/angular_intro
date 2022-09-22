@@ -40,12 +40,12 @@ button:focus {
 }
 
 .row {
-    display: flex;    
+    display: flex;
+    gap: 1.5rem;
 }
 
 .col {
-    flex-grow: 1;
-    margin-right: 15px;
+    flex-grow: 1;    
 }
 
 input {

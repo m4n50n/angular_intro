@@ -1,5 +1,9 @@
+// Importaciones de Angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+// Importación de componentes
 import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
@@ -10,7 +14,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     MainPageComponent // Debemos exportar el componente para que sea visible externamente
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 
