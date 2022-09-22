@@ -1,5 +1,5 @@
 // Importaciones de Angular
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 // Interfaces
 interface Personaje {
@@ -34,14 +34,14 @@ export class MainPageComponent {
     }
   ];
 
-  // En tecnologÌas antÌguas usarÌamos el preventDefault de esta manera para evitar que la p·gina se refresque despuÈs de hacer submit
+  // En tecnolog√≠as ant√≠guas usar√≠amos el preventDefault de esta manera para evitar que la p√°gina se refresque despu√©s de hacer submit
   agregarFormaAntigua(event: any) {
     event.preventDefault();
     console.log(event);
   }
 
   agregar() {
-    if (this.nuevo.nombre.trim().length === 0) { return; }
+    if (this.nuevo.nombre.trim().length === 0 || this.nuevo.poder === 0) { return; }
 
     this.personajes.push(this.nuevo);
     this.nuevo = this.personajeVacio;

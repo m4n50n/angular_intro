@@ -3,29 +3,22 @@
 
 <div class="row">
   <div class="col">
-    <h3>Personajes</h3>
-    <hr />
-
-    <ul>
-      <li *ngFor="let personaje of personajes; let i = index">
-        {{ i }}: {{ personaje.nombre }} - {{ personaje.poder | number }} <!-- | se conoce como pipe. Haciendo esto indicamos que queremos que personaje.poder se muestre visualmente como un número -->
-      </li>
-    </ul>
+    <app-personajes></app-personajes>
   </div>
 
   <div class="col">
     <h3>Agregar</h3>
     <hr />
 
-    <!-- <form (submit)="agregar($event)"> Añadiendo $ enviamos el evento que se está disparando (de esta forma podríamos hacer un preventDefault() en el método al que llamamos) -->
-    <!-- De esta forma solo necesitaremos importar el módulo FormsModule -->
+    <!-- <form (submit)="agregar($event)"> AÃ±adiendo $ enviamos el evento que se estÃ¡ disparando (de esta forma podrÃ­amos hacer un preventDefault() en el mÃ©todo al que llamamos) -->
+    <!-- De esta forma solo necesitaremos importar el mÃ³dulo FormsModule -->
     <form (ngSubmit)="agregar()">
-      <!-- Poniendo las etiquetas entre corchetes podremos usar propiedades del componente. En este caso apuntará a la propiedad nuevo del componente -->
-      <!-- El siguiente input por una parte tendría el valor de nuevo.nombre y (input) significa que cuando cambie llamará a la función pasando el método -->
+      <!-- Poniendo las etiquetas entre corchetes podremos usar propiedades del componente. En este caso apuntarÃ¡ a la propiedad nuevo del componente -->
+      <!-- El siguiente input por una parte tendrÃ­a el valor de nuevo.nombre y (input) significa que cuando cambie llamarÃ¡ a la funciÃ³n pasando el mÃ©todo -->
       <!-- <input type="text" placeholder="Nombre" [value]="nuevo.nombre" (input)="cambiarNombre($event)"/> -->
 
-      <!-- Con la siguiente función haremos todo lo de arriba pero con una sola etiqueta ngModel -->
-      <!-- Con los corchetes y los paréntesis en [(ngModel)] indicamos que queremos tanto escuchar como emitir el evento -->
+      <!-- Con la siguiente funciÃ³n haremos todo lo de arriba pero con una sola etiqueta ngModel -->
+      <!-- Con los corchetes y los parÃ©ntesis en [(ngModel)] indicamos que queremos tanto escuchar como emitir el evento -->
       <input
         type="text"
         placeholder="Nombre"
@@ -35,7 +28,7 @@
 
       <small>{{ nuevo.nombre }}</small
       ><br />
-      <!-- Esto lo usamos para comprobar que efectivamente con [(ngModel)] se guarda el texto escrito y además se emite cuando cambia (on change) -->
+      <!-- Esto lo usamos para comprobar que efectivamente con [(ngModel)] se guarda el texto escrito y ademÃ¡s se emite cuando cambia (on change) -->
 
       <!-- <input
         type="number"
