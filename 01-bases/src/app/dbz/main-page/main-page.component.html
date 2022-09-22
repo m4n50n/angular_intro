@@ -7,9 +7,9 @@
     <hr />
 
     <ul>
-      <li>Krillin - 700</li>
-      <li>Goku - 15,000</li>
-      <li>Vegeta - 8,500</li>
+      <li *ngFor="let personaje of personajes; let i = index">
+        {{ i }}: {{ personaje.nombre }} - {{ personaje.poder | number }} <!-- | se conoce como pipe. Haciendo esto indicamos que queremos que personaje.poder se muestre visualmente como un número -->
+      </li>
     </ul>
   </div>
 
@@ -33,7 +33,9 @@
         [(ngModel)]="nuevo.nombre"
       />
 
-      <small>{{ nuevo.nombre }}</small><br> <!-- Esto lo usamos para comprobar que efectivamente con [(ngModel)] se guarda el texto escrito y además se emite cuando cambia (on change) -->
+      <small>{{ nuevo.nombre }}</small
+      ><br />
+      <!-- Esto lo usamos para comprobar que efectivamente con [(ngModel)] se guarda el texto escrito y además se emite cuando cambia (on change) -->
 
       <!-- <input
         type="number"
@@ -49,7 +51,8 @@
         [(ngModel)]="nuevo.poder"
       />
 
-      <small>{{ nuevo.poder }}</small><br>
+      <small>{{ nuevo.poder }}</small
+      ><br />
 
       <button>Agregar</button>
     </form>
