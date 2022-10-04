@@ -9,7 +9,7 @@ import { DbzModule } from './dbz/dbz.module';
 
 /* El objetivo de los módulos es ayudar a comprobar componentes y piezas de la aplicación que tienen sentido entre sí */
 @NgModule({
-  declarations: [ // Declaración de los components creados
+  declarations: [ // Declaración de los componentes creados
     AppComponent
   ],
   // Importación de módulos

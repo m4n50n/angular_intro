@@ -1,8 +1,8 @@
 /**
  * Este objeto lo hemos creado manualmente
  * Para ello:
- *  1. Creación del fichero contador.component.ts 
- *      contador -> Nombre del componente
+ *  1. Creación del fichero contador-numeros.component.ts 
+ *      contador-numeros -> Nombre del componente
  *      component -> Tipo de objeto (componente en este caso)
  *      ts -> Extensión de fichero TypeScript
  *  2. Importar Component (decorador) para poder definir las propiedades del componente
@@ -21,7 +21,7 @@ export class ContadorComponent {
     numero: number = 0;
     base: number = 5;
 
-    operar(num: number) {
+    operar(num: number): void {
         this.numero += num;
     }
 }

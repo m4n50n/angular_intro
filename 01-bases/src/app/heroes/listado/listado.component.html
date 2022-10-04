@@ -6,6 +6,7 @@
 </ul>
 
 <div *ngIf="heroeBorrado.length !== 0; else noBorrado">
+  <!-- Este  bloque sólo aparecerá si ngIf es true (por lo que no se mostraría en caso de *ngIf="false") -->
   <!-- noBorrado es una referencia local (siempre del lado del template .html) que usaremos con el componente ng-template -->
   <!-- <div *ngIf="heroeBorrado"> Esto tal cual también funcionaría, ya que angular daría como "false" un string vacio  -->
   <small>Se ha borrado el héroe '{{ heroeBorrado }}'</small>

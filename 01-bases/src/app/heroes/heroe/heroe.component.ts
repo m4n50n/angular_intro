@@ -9,12 +9,12 @@ export class HeroeComponent {
     nombre: string = "Iron Man";
     edad: number = 45;
 
-    /* Getter */
+    /* Getter (no actúa como método - igual para los setters -) */
     get nombreCapitalizado():string {
         return this.nombre.toUpperCase();
     }
 
-    obtenerNombre(): string {
+    obtenerDescripcion(): string {
         return `${this.nombre} / Edad: ${this.edad} años.`;
     }
 

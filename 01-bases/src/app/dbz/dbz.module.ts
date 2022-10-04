@@ -1,7 +1,7 @@
 // Importaciones de Angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; /* Módulo tradicional de manejo de formularios en Angular */
 
 // Importación de componentes
 import { MainPageComponent } from './main-page/main-page.component';;
