@@ -24,7 +24,7 @@
 |`angular.json`|Contiene configuraciones importantes del proyecto (entre ellas: favicon, assets, styles, etc...).|
 |`.editorconfig`|Definición de algunas reglas del editor.|
 |`.browserslistrc`|Se usa en caso de querer incrementar la compatibilidad con Internet Explorer, por ejemplo.|
-|`/src`|Carpeta principal (source) del proyecto.|
+|`/src`|Carpeta principal (source) del proyecto. Se debe ejecutar en la raíz del proyecto.|
 
 - Explicación breve de algunos ficheros de la carpeta `/src`:
   
