@@ -3,13 +3,12 @@
 
 <div class="row">
   <div class="col">
-    <app-personajes [personajes]="personajes"></app-personajes> <!-- Con [personajes] asociamos la propiedad personajes a la "etiqueta" [personajes] (Es decir, al usar [] lo que hacemos es trabajar con valores - propiedades de la clase-) -->
+    <app-personajes></app-personajes> <!-- Con [personajes] asociamos la propiedad personajes a la "etiqueta" [personajes] (Es decir, al usar [] lo que hacemos es trabajar con valores - propiedades de la clase-) -->
   </div>
 
   <div class="col">
     <app-agregar 
       [nuevo]="nuevo"
-      (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
     > <!-- El método agregarNuevoPersonaje recibirá la información emitida por el componente hijo -->
     </app-agregar>
   </div>
