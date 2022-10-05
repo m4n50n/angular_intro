@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -7,9 +8,6 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 
 export class AgregarComponent {
-  /* Con @Input() indicamos que el valor de la propiedad vendrá del componente padre (es decir, vendrá desde cualquier componente que llame a este componente) */  
-  @Input() personajes: Personaje[] = [];
-
   @Input() nuevo: Personaje = {
     nombre: "",
     poder: 0
@@ -20,6 +18,9 @@ export class AgregarComponent {
     poder: 0
   }
 
+  /* Con el decorador @Output emitimos un valor desde el elemento hijo al padre */
+  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter(); // Vamos a emitir una interfaz Personaje
+
   // En tecnologías antíguas usaríamos el preventDefault de esta manera para evitar que la página se refresque después de hacer submit
   agregarFormaAntigua(event: any) {
     event.preventDefault();
@@ -29,7 +30,9 @@ export class AgregarComponent {
   agregar() {
     if (this.nuevo.nombre.trim().length === 0 || this.nuevo.poder === 0) { return; }
 
-    this.personajes.push(this.nuevo);
+    // En este punto tendremos los datos del nuevo personaje, por lo que necesitaremos hacer la emisión del dato al componente padre
+    this.onNuevoPersonaje.emit(this.nuevo);
+
     this.nuevo = this.personajeVacio;
   }
 

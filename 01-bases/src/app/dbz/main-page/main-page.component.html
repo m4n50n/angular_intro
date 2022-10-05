@@ -8,8 +8,9 @@
 
   <div class="col">
     <app-agregar 
-      [personajes]="personajes" 
-      [nuevo]="nuevo">
+      [nuevo]="nuevo"
+      (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
+    > <!-- El método agregarNuevoPersonaje recibirá la información emitida por el componente hijo -->
     </app-agregar>
   </div>
 </div>
