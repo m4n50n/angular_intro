@@ -8,20 +8,32 @@ import { MainPageComponent } from './main-page/main-page.component';;
 import { PersonajesComponent } from './personajes/personajes.component';
 import { AgregarComponent } from './agregar/agregar.component'
 
+// Importación de servicios
+import { DBzService } from './services/dbz.service';
+
 @NgModule({
+  // Declaración de componentes que conforman el módulo
   declarations: [
     MainPageComponent,
 
-    // Estos componentes no sería necesario exportarlos porque solo se muestran y usan dentro del componente MainPageComponent
+    // No sería necesario exportar los siguientes componentes porque solo se muestran y usan dentro del componente MainPageComponent
     PersonajesComponent,
     AgregarComponent
   ],
+  // Exportación de componentes que serán visibles externamente
   exports: [
-    MainPageComponent // Debemos exportar el componente para que sea visible externamente
+    MainPageComponent
   ],
+  // Import de módulos necesarios
   imports: [
     CommonModule,
     FormsModule
+  ],
+  // Importación de servicios (providers) para este módulo
+  // Los servicios servirán como una única instancia que tendremos a lo largo de este módulo
+  // Deberán ser instanciados una primera vez
+  providers: [
+    DBzService
   ]
 })
 
