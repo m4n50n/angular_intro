@@ -5,11 +5,16 @@ import { FormsModule } from '@angular/forms'; /* Módulo tradicional de manejo d
 
 // Importación de componentes
 import { MainPageComponent } from './main-page/main-page.component';;
-import { PersonajesComponent } from './personajes/personajes.component'
+import { PersonajesComponent } from './personajes/personajes.component';
+import { AgregarComponent } from './agregar/agregar.component'
+
 @NgModule({
   declarations: [
     MainPageComponent,
-    PersonajesComponent // Este componente no sería necesario exportarlo porque solo se mostraría dentro del componente MainPageComponent
+
+    // Estos componentes no sería necesario exportarlos porque solo se muestran y usan dentro del componente MainPageComponent
+    PersonajesComponent,
+    AgregarComponent
   ],
   exports: [
     MainPageComponent // Debemos exportar el componente para que sea visible externamente

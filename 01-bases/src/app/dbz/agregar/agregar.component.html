@@ -1,0 +1,47 @@
+<h3>Agregar</h3>
+<hr />
+
+<!-- <form (submit)="agregarFormaAntigua($event)"> Añadiendo $event enviamos el evento que se está disparando (de esta forma podríamos hacer un preventDefault() en el método al que llamamos) -->    
+<form (ngSubmit)="agregar()"> <!-- Podremos usar el evento personalizado de Angular ngSubmit sólo importando el módulo FormsModule -->
+    <!-- El siguiente input por una parte tendría el valor de nuevo.nombre y (input) significa que cuando cambie llamará a la función pasando el método -->
+    <!-- 
+    <input type="text" 
+    placeholder="Nombre" 
+    [value]="nuevo.nombre" 
+    (input)="cambiarNombre($event)"/> 
+    -->
+    <!-- Poniendo las etiquetas entre corchetes podremos usar propiedades del componente. En este caso apuntará a la propiedad "nuevo" del componente -->            
+    <!-- En definitiva: con [] establecemos alguna propiedad al elemento y con () emitimos / escuchamos eventos -->
+
+    <!-- Con la siguiente función haremos todo lo de arriba pero con una sola etiqueta ngModel -->
+    <!-- Con los corchetes y los paréntesis en [(ngModel)] indicamos que queremos tanto escuchar (ver su value) como emitir el evento (cambiar value onchange -que es lo que hace (input)-) -->
+    <input
+    type="text"
+    placeholder="Nombre"
+    name="nombre"
+    [(ngModel)]="nuevo.nombre"
+    />
+
+    <small>Nuevo nombre: {{ nuevo.nombre }}</small
+    ><br />
+    <!-- Esto lo usamos para comprobar que efectivamente con [(ngModel)] se guarda el texto escrito y además se emite cuando cambia (on change - que es lo que haría (input)-) -->
+
+    <!-- <input
+    type="number"
+    placeholder="Poder"
+    [value]="nuevo.poder"
+    (input)="cambiarPoder($event)"
+    /> -->
+
+    <input
+    type="number"
+    placeholder="Poder"
+    name="poder"
+    [(ngModel)]="nuevo.poder"
+    />
+
+    <small>Nuevo poder: {{ nuevo.poder }}</small
+    ><br />
+
+    <button>Agregar</button>
+</form>

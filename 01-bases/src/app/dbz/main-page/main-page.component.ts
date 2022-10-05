@@ -10,16 +10,6 @@ import { Personaje } from '../interfaces/dbz.interface';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-  personajeVacio: Personaje = {
-    nombre: "",
-    poder: 0
-  }
-
-  nuevo: Personaje = {
-    nombre: "",
-    poder: 0
-  }
-
   personajes: Personaje[] = [
     {
       nombre: "Goku",
@@ -31,24 +21,8 @@ export class MainPageComponent {
     }
   ];
 
-  // En tecnologías antíguas usaríamos el preventDefault de esta manera para evitar que la página se refresque después de hacer submit
-  agregarFormaAntigua(event: any) {
-    event.preventDefault();
-    console.log(event);
-  }
-
-  agregar() {
-    if (this.nuevo.nombre.trim().length === 0 || this.nuevo.poder === 0) { return; }
-
-    this.personajes.push(this.nuevo);
-    this.nuevo = this.personajeVacio;
-  }
-
-  cambiarNombre(event: any) {
-    console.log(event.target.value);
-  }
-
-  cambiarPoder(event: any) {
-    console.log(event.target.value);
+  nuevo: Personaje = {
+    nombre: "Maestro Roshi",
+    poder: 20999
   }
 }

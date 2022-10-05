@@ -4,6 +4,6 @@
 <ul>
   <li *ngFor="let personaje of personajes; let i = index">
     <!-- | se conoce como pipe. Haciendo esto indicamos que queremos que personaje.poder se muestre visualmente como un número -->
-    {{ i }}: {{ personaje.nombre }} - {{ personaje.poder | number }}
+    {{ i + 1 }}: {{ personaje.nombre }} - {{ personaje.poder | number }}
   </li>
 </ul>
