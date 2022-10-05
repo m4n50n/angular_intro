@@ -9,6 +9,7 @@
 |`ng serve`|Construir e iniciar el proyecto. Con `-o` ordenamos que se abra el navegador al terminar.<br>https://angular.io/cli/serve|
 |`ng generate component heroes/listado` o con parámetros abreviados `ng g c heroes/listado`|Crear un componente automáticamente (debemos estar situados en el directorio raíz del proyecto en la terminal). En este caso crearía el componente listado dentro de la carpeta `/app/heroes`. Esto creará todos los ficheros necesarios para el nuevo componente y además actualizará el fichero de módulo `app-modules.ts` (o el que corresponda en caso de estar dentro de un módulo concreto). Si añadimos `--skipTests` al comando no creará el archivo de tests (<i>nombre.component.spec.ts</i>).|
 |`ng generate module dbz` o con parámetros abreviados `ng g m dbz`|Crear un módulo automáticamente con el nombre asignado (en este caso <i>dbz</i>).|
+|`ng build --prod`|Crear el build de producción.|
 
 - Explicación breve de algunos ficheros del directorio raíz del proyecto:
   
