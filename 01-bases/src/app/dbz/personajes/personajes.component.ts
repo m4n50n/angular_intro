@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 // Import de interfaces
-//import { Personaje } from '../interfaces/dbz.interface';
+import { Personaje } from '../interfaces/dbz.interface';
 
 // Import de servicios
 import { DBzService } from '../services/dbz.service';

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 // Servicios
-//import { DBzService } from '../services/dbz.service';
+import { DBzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',

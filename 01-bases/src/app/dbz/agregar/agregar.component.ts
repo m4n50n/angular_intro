@@ -1,6 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DBzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -18,8 +19,10 @@ export class AgregarComponent {
     poder: 0
   }
 
+  constructor(private dbzService: DBzService) {}
+
   /* Con el decorador @Output emitimos un valor desde el elemento hijo al padre */
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter(); // Vamos a emitir una interfaz Personaje
+  //@Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter(); // Vamos a emitir una interfaz Personaje
 
   // En tecnologías antíguas usaríamos el preventDefault de esta manera para evitar que la página se refresque después de hacer submit
   agregarFormaAntigua(event: any) {
@@ -31,7 +34,8 @@ export class AgregarComponent {
     if (this.nuevo.nombre.trim().length === 0 || this.nuevo.poder === 0) { return; }
 
     // En este punto tendremos los datos del nuevo personaje, por lo que necesitaremos hacer la emisión del dato al componente padre
-    this.onNuevoPersonaje.emit(this.nuevo);
+    //this.onNuevoPersonaje.emit(this.nuevo);
+    this.dbzService.agregarPersonaje(this.nuevo);
 
     this.nuevo = this.personajeVacio;
   }
