@@ -27,6 +27,8 @@ export class MainPageComponent {
   }
 
   agregarNuevoPersonaje(argumento: Personaje) {
+    // debugger; // Chrome se pausará en este punto (como si pusiéramos manualmente un breakpoint en el inspector)
+    // En la clase Bonus: Depuración de la aplicación se detallan otros tipos de depuración con VSCode
     this.personajes.push(argumento);
   }
 }
