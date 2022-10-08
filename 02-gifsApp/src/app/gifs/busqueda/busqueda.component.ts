@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-busqueda',
-  templateUrl: './busqueda.component.html',
-  styles: [
-  ]
+  templateUrl: './busqueda.component.html'
 })
-export class BusquedaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class BusquedaComponent {
+  constructor() {}
 }
