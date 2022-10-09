@@ -13,12 +13,19 @@ import { Injectable } from '@angular/core';
 export class GifsService {
   private _historial: string[] = [];
 
-  get historial() {
+  get historial() {    
     return [...this._historial]; // Devolvemos un nuevo array copia del original para así eliminar la referencia al mismo
   }
 
   buscarGifs(query: string) {
-    this._historial.unshift(query);
+    query = query.trim().toLocaleLowerCase();
+    
+    // Comprobar si el valor ya existe en el historial y si no, se inserta
+    if (!this._historial.includes(query)) {
+      this._historial.unshift(query);
+      this._historial = this._historial.splice(0, 10); // Esto cortará el array para mostrar sólo 10 resultados (del 0 -primero- al 10)
+    }
+    
     console.log(this._historial);
   }
 }

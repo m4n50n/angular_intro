@@ -27,7 +27,8 @@ export class BusquedaComponent {
   buscar_final(): void { // Como accedemos al input mediante el decorador, no tenemos que enviar ni recibir ningún parámetro
     const valor = this.txtBuscarLocal.nativeElement.value;
 
-    if (valor.length === 0) { return; }
+    // Evitar guardar vacíos
+    if (valor.trim().length === 0) { return; }
 
     console.log("Valor de búsqueda: ", valor);
 
