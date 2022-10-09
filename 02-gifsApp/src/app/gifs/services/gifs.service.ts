@@ -11,6 +11,8 @@ import { Injectable } from '@angular/core';
 3. Constructor
 4. Métodos */
 export class GifsService {
+  // https://developers.giphy.com/docs/api/endpoint#search
+  private apiKey: string = "9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6";
   private _historial: string[] = [];
 
   get historial() {    
@@ -19,7 +21,7 @@ export class GifsService {
 
   buscarGifs(query: string) {
     query = query.trim().toLocaleLowerCase();
-    
+
     // Comprobar si el valor ya existe en el historial y si no, se inserta
     if (!this._historial.includes(query)) {
       this._historial.unshift(query);
