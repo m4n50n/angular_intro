@@ -1,2 +1,29 @@
 <h5>Buscar:</h5>
-<input type="text" class="form-control" placeholder="Buscar gifs..." />
+
+<!-- En este caso usaremos esto para obtener los datos del input sin necesidad de hacerlo con FormsModule, ya que no merece la pena importarlo solo para un input -->
+<!-- Con (keyup.enter) especificamos que será solo en keyup de la tecla enter -->
+<!-- Esta seria una manera antigua de hacerlo -->
+<!-- <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Buscar gifs..." 
+    (keyup)="buscar_old($event)"    
+/> -->
+
+<!-- #txtBuscar sería una referencia local -->
+<!-- De esta forma pasaríamos, al pulsar enter, el valor del input al método -->
+<!-- <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Buscar gifs..."     
+    (keyup.enter)="buscar(txtBuscar.value)" 
+    #txtBuscar
+/> -->
+
+<input 
+    type="text" 
+    class="form-control" 
+    placeholder="Buscar gifs..."     
+    (keyup.enter)="buscar_final()" 
+    #txtBuscar
+/>
