@@ -2,7 +2,7 @@
 
 Curso Udemy - ***Angular: De cero a experto***.
 
-# Notas y comandos del curso
+## Notas y comandos del curso
 
 - Se usará Angular CLI:
 
@@ -11,10 +11,9 @@ Curso Udemy - ***Angular: De cero a experto***.
 |`ng --version`|Comprobar la versión de Angular CLI.<br>https://angular.io/cli/version|
 |`ng new nombre_proyecto`|Crear un nuevo proyecto en el directorio actual.<br>https://angular.io/cli/new|
 |`ng serve`|Construir e iniciar el proyecto. Con `-o` ordenamos que se abra el navegador al terminar.<br>https://angular.io/cli/serve|
-|`ng generate component heroes/listado` o con parámetros abreviados `ng g c heroes/listado`|Crear un componente automáticamente (debemos estar situados en el directorio raíz del proyecto en la terminal). En este caso crearía el componente listado dentro de la carpeta `/app/heroes`. Esto creará todos los ficheros necesarios para el nuevo componente y además actualizará el fichero de módulo `app-modules.ts` (o el que corresponda en caso de estar dentro de un módulo concreto). 
-- Si añadimos `--skipTests` al comando, no creará el archivo de tests (<i>nombre.component.spec.ts</i>).
-- Si añadimos `-is` al comando, no creará el archivo de estilos (<i>nombre.component.css</i>).|
+|`ng generate component heroes/listado` o con parámetros abreviados `ng g c heroes/listado`|Crear un componente automáticamente (debemos estar situados en el directorio raíz del proyecto en la terminal). En este caso crearía el componente listado dentro de la carpeta `/app/heroes`. Esto creará todos los ficheros necesarios para el nuevo componente y además actualizará el fichero de módulo `app-modules.ts` (o el que corresponda en caso de estar dentro de un módulo concreto). <br> - Si añadimos `--skipTests` al comando, no creará el archivo de tests (<i>nombre.component.spec.ts</i>). <br> - Si añadimos `-is` al comando, no creará el archivo de estilos (<i>nombre.component.css</i>).|
 |`ng generate module dbz` o con parámetros abreviados `ng g m dbz`|Crear un módulo automáticamente con el nombre asignado (en este caso <i>dbz</i>).|
+|`ng generate service gifs/services/gifs` o con parámetros abreviados `ng g s gifs/services/gifs`|Generar servicio en la ruta especificada. En el servicio iremos almacenando y manipulando todos los datos del módulo. En el fichero del servicio se definirá automáticamente `providedIn: 'root'`, que evitará que tengamos que definir el servicio como provider en su módulo correspondiente, haciendo que el servicio sea visible a nivel global.|
 |`ng build --prod`|Crear el build de producción.|
 
 - Explicación breve de algunos ficheros del directorio raíz del proyecto:

@@ -5,7 +5,16 @@
 
   <hr class="text-white" />
 
-  <div class="list-group">
+  <!-- <div class="list-group">
     <a href="#" class="list-group-item list-group-item-action"> Dashboard </a>
+  </div> -->
+
+  <div class="list-group">    
+    <a 
+      *ngFor="let item of historial_busqueda;" 
+      href="#" 
+      class="list-group-item list-group-item-action">
+      {{item}}
+    </a>
   </div>
 </div>
