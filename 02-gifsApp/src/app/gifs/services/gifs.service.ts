@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -19,6 +20,8 @@ export class GifsService {
     return [...this._historial]; // Devolvemos un nuevo array copia del original para así eliminar la referencia al mismo
   }
 
+  constructor(private http: HttpClient) {} // Inicio de instancia para hacer peticiones HTTP. Esto trabajará con observables y no con promesas.
+
   buscarGifs(query: string) {
     query = query.trim().toLocaleLowerCase();
 
@@ -29,5 +32,16 @@ export class GifsService {
     }
     
     console.log(this._historial);
+
+    // Fetch típico
+    /* fetch("https://api.giphy.com/v1/gifs/search?api_key=9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6&q=dragon ball z&limit=10").then(respuesta=> {
+      respuesta.json().then(datos=>{console.log(datos);})
+    }) */
+
+    // Fetch con HttpClientModule
+    this.http.get("https://api.giphy.com/v1/gifs/search?api_key=9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6&q=dragon ball z&limit=10")
+      .subscribe((respuesta: any) => {
+        console.log(respuesta);
+      }) // suscribe() se ejecutará cuando obtengamos la resolución del get(), de forma parecida al then()
   }
 }
