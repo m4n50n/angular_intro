@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SearchGifsResponse, Gif } from '../interfaces/gifs.interface';
 
 @Injectable({
   // Definición global de servicios:
@@ -16,8 +17,7 @@ export class GifsService {
   private apiKey: string = "9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6";
   private _historial: string[] = [];
 
-  // TODO: Cambiar any por su tipo correcto
-  public resultados: any[] = [];
+  public resultados: Gif[] = []; // La interface Gif la hemos extraido de la misma manera que SearchGifsResponse (a la hora de llamar al endpoint con get -más abajo en este fichero-)
 
   get historial() {    
     return [...this._historial]; // Devolvemos un nuevo array copia del original para así eliminar la referencia al mismo
@@ -42,8 +42,11 @@ export class GifsService {
     }) */
 
     // Fetch con HttpClientModule
-    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=10`)
-      .subscribe((respuesta: any) => {
+    // En https://quicktype.io/ podemos copiar todo el JSON de la respuesta (desde postman por ejemplo) y obtener las interfaces ya creadas
+    // Como el get es de tipo genérico podemos asignarle la interfaz que va a devolver
+    // Se interpretaría como que get va a traer una información y esa información va a tener el formato de la interfaz SearchGifsResponse
+    this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=10`)
+      .subscribe((respuesta) => { // Aquí respuesta no tiene tipado porque ya hemos puesto el genérico en la línea de arriba
         console.log(respuesta);
         this.resultados = respuesta.data;
       }) // suscribe() se ejecutará cuando obtengamos la resolución del get(), de forma parecida al then()
