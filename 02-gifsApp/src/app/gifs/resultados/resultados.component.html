@@ -1,1 +1,13 @@
-Est eu tempor aute est consectetur consectetur mollit sit sint ad ad. Id sit magna anim tempor enim velit anim ea. Ea nostrud minim irure dolore ex. Eiusmod tempor mollit aliqua in amet sint ea culpa reprehenderit sit laborum do. Incididunt culpa nostrud incididunt Lorem ipsum duis amet. Sunt et nisi incididunt ipsum mollit. Irure ad labore commodo do est ad proident nisi nisi nulla laborum laborum Lorem.
+<div class="row">
+    <div *ngFor="let gif of resultados" class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="card">
+            <img class="card-img-top" [src]="gif.images.downsized_medium.url" [alt]="gif.title" />
+
+            <div class="card-body">                
+                <p class="card-text">
+                    {{gif.title}}
+                </p>                
+            </div>
+        </div>
+    </div>
+</div>

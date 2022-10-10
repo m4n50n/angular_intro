@@ -20,10 +20,11 @@
     #txtBuscar
 /> -->
 
+<!-- (keyup.enter)="buscar_final()"  -->
 <input 
     type="text" 
     class="form-control" 
-    placeholder="Buscar gifs..."     
-    (keyup.enter)="buscar_final()" 
+    placeholder="Buscar gifs..."    
+    (keyup)="buscar_final()"
     #txtBuscar
 />
