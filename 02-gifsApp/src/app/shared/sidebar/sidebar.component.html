@@ -13,7 +13,8 @@
     <a 
       *ngFor="let item of historial_busqueda;" 
       href="#" 
-      class="list-group-item list-group-item-action">
+      class="list-group-item list-group-item-action"
+      (click)="buscar(item)">
       {{item | titlecase}} <!-- Con el pipe titlecase hacemos que los resultados se muestren capitalizados (aunque se estén almacenando en minúsculas -en el método buscarGifs del servicio-) -->
     </a>
   </div>
