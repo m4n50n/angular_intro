@@ -23,7 +23,10 @@ export class GifsService {
     return [...this._historial]; // Devolvemos un nuevo array copia del original para así eliminar la referencia al mismo
   }
 
-  constructor(private http: HttpClient) {} // Inicio de instancia para hacer peticiones HTTP. Esto trabajará con observables y no con promesas.
+  constructor(private http: HttpClient) { // Inicio de instancia para hacer peticiones HTTP. Esto trabajará con observables y no con promesas.
+    // En caso de ser nulo será un array vacio (|| [])
+    this._historial = JSON.parse(localStorage.getItem("historial")!) || []; // Al poner ! al final forzamos a que Angular no considere que este campo va a ser null (que es el error que da) puesto que ya hacemos la validación nosotros mismos con el if
+  } 
 
   buscarGifs(query: string) {
     query = query.trim().toLocaleLowerCase();
@@ -32,6 +35,8 @@ export class GifsService {
     if (!this._historial.includes(query)) {
       this._historial.unshift(query);
       this._historial = this._historial.splice(0, 10); // Esto cortará el array para mostrar sólo 10 resultados (del 0 -primero- al 10)
+
+      localStorage.setItem("historial", JSON.stringify(this._historial));
     }
     
     console.log(this._historial);
