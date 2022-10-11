@@ -26,6 +26,7 @@ export class GifsService {
   constructor(private http: HttpClient) { // Inicio de instancia para hacer peticiones HTTP. Esto trabajará con observables y no con promesas.
     // En caso de ser nulo será un array vacio (|| [])
     this._historial = JSON.parse(localStorage.getItem("historial")!) || []; // Al poner ! al final forzamos a que Angular no considere que este campo va a ser null (que es el error que da) puesto que ya hacemos la validación nosotros mismos con el if
+    this.resultados = JSON.parse(localStorage.getItem("resultados")!) || [];
   } 
 
   buscarGifs(query: string) {
@@ -54,6 +55,7 @@ export class GifsService {
       .subscribe((respuesta) => { // Aquí respuesta no tiene tipado porque ya hemos puesto el genérico en la línea de arriba
         console.log(respuesta);
         this.resultados = respuesta.data;
+        localStorage.setItem("resultados", JSON.stringify(this.resultados));
       }) // suscribe() se ejecutará cuando obtengamos la resolución del get(), de forma parecida al then()
   }
 }
