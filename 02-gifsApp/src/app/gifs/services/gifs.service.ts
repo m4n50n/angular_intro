@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchGifsResponse, Gif } from '../interfaces/gifs.interface';
 
@@ -15,6 +15,7 @@ import { SearchGifsResponse, Gif } from '../interfaces/gifs.interface';
 export class GifsService {
   // https://developers.giphy.com/docs/api/endpoint#search
   private apiKey: string = "9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6";
+  private serviceUrl: string = "https://api.giphy.com/v1/gifs";
   private _historial: string[] = [];
 
   public resultados: Gif[] = []; // La interface Gif la hemos extraido de la misma manera que SearchGifsResponse (a la hora de llamar al endpoint con get -más abajo en este fichero-)
@@ -40,7 +41,11 @@ export class GifsService {
       localStorage.setItem("historial", JSON.stringify(this._historial));
     }
     
-    console.log(this._historial);
+    //console.log(this._historial);
+    const params = new HttpParams()
+      .set("api_key", this.apiKey)
+      .set("limit", "10")
+      .set("q", query);
 
     // Fetch típico
     /* fetch("https://api.giphy.com/v1/gifs/search?api_key=9DvXwP7Pjt9yMXqcHdLFZlvNsaCBa7u6&q=dragon ball z&limit=10").then(respuesta=> {
@@ -51,7 +56,7 @@ export class GifsService {
     // En https://quicktype.io/ podemos copiar todo el JSON de la respuesta (desde postman por ejemplo) y obtener las interfaces ya creadas
     // Como el get es de tipo genérico podemos asignarle la interfaz que va a devolver
     // Se interpretaría como que get va a traer una información y esa información va a tener el formato de la interfaz SearchGifsResponse
-    this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=10`)
+    this.http.get<SearchGifsResponse>(`${this.serviceUrl}/search`, {params: params}) // Cuando en los objetos el nombre de una propiedad es igual al nombre de la variable, podemos poner directamente { params }
       .subscribe((respuesta) => { // Aquí respuesta no tiene tipado porque ya hemos puesto el genérico en la línea de arriba
         console.log(respuesta);
         this.resultados = respuesta.data;
