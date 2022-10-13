@@ -1,5 +1,19 @@
-<app-por-capital></app-por-capital>
-<app-por-pais></app-por-pais>
-<app-por-region></app-por-region>
-<app-ver-pais></app-ver-pais>
-<app-sidebar></app-sidebar>
+<div class="container row mt-4">
+    <div class="col-3">
+        <h2>Búsquedas</h2>
+        <hr>
+
+        <ul class="list-group">
+            <li class="list-group-item">Buscar país</li>
+            <li class="list-group-item">Por país</li>
+            <li class="list-group-item">Por capital</li>
+        </ul>
+    </div>
+
+    <div class="col"> <!-- Este div ocuparía el tamaño restante (12 - 3 columnas) -->
+        <h2>Por capital</h2>
+        <hr>
+
+        <app-por-capital></app-por-capital>
+    </div>
+</div>
