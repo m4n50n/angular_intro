@@ -1,1 +1,21 @@
-<p>sidebar works!</p>
+<h2>Búsquedas</h2>
+<hr />
+
+<!-- Con routerLinkActive="active" establecemos que, si el componente (es decir, el link) se encuentra activo, le asigne la clase active -->
+<!-- Si no establecemos [routerLinkActiveOptions]="{ exact: true}" al link "raíz", siempre permanecería activo (esto solo haría falta cuando la dirección es la raíz del sitio exacta) -->
+<ul class="list-group">
+  <li
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item"
+  >
+    Buscar país
+  </li>
+  <li routerLink="/region" routerLinkActive="active" class="list-group-item">
+    Por region
+  </li>
+  <li routerLink="/capital" routerLinkActive="active" class="list-group-item">
+    Por capital
+  </li>
+</ul>
