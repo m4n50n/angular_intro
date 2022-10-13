@@ -1,19 +1,20 @@
 <div class="container row mt-4">
-    <div class="col-3">
-        <h2>Búsquedas</h2>
-        <hr>
+  <div class="col-3">
+    <h2>Búsquedas</h2>
+    <hr />
 
-        <ul class="list-group">
-            <li class="list-group-item">Buscar país</li>
-            <li class="list-group-item">Por país</li>
-            <li class="list-group-item">Por capital</li>
-        </ul>
-    </div>
+    <!-- Con routerLinkActive="active" establecemos que, si el componente (es decir, el link) se encuentra activo, le asigne la clase active -->
+    <!-- Si no establecemos [routerLinkActiveOptions]="{ exact: true}" al link "raíz", siempre permanecería activo (esto solo haría falta cuando la dirección es la raíz del sitio exacta) -->
+    <ul class="list-group">
+      <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" class="list-group-item">Buscar país</li>
+      <li routerLink="/region" routerLinkActive="active" class="list-group-item">Por region</li>
+      <li routerLink="/capital" routerLinkActive="active" class="list-group-item">Por capital</li>
+    </ul>
+  </div>
 
-    <div class="col"> <!-- Este div ocuparía el tamaño restante (12 - 3 columnas) -->
-        <router-outlet></router-outlet> <!-- Renderizar el componente en esta línea según las definiciones de rutas en app-routing.module.ts -->
-        <hr>
-
-        <app-por-capital></app-por-capital>
-    </div>
+  <!-- Este div ocuparía el tamaño restante (12 - 3 columnas) -->
+  <div class="col">
+    <!-- Renderizar el componente en esta línea según las definiciones de rutas en app-routing.module.ts -->
+    <router-outlet></router-outlet>
+  </div>
 </div>
