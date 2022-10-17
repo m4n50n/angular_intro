@@ -19,8 +19,8 @@ export class PorPaisComponent {
 
     // Nos suscribimos aquí y no en el servicio.
     this.paisService.buscarPais(this.termino)
-    .subscribe((respuesta) => {
-      console.log(respuesta);
+    .subscribe((paises) => {
+      console.log(paises);
     }, (error) => {
       console.log("Error");
       console.info(error);

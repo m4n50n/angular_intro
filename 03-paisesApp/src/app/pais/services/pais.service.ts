@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class PaisService {
 
   constructor(private http: HttpClient) { }
   
-  buscarPais(termino:string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/name/${termino}`); // No llamamos a suscribe(); Esto regresa un <Observable> (podemos verlo situando el cursor encima de get)
+  // El endpoint devolverá un array de paises que coincidan con el término de búsqueda
+  buscarPais(termino:string): Observable<Country[]> { // Retornará un arreglo de Country (interfaz)
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${termino}`); // No llamamos a suscribe(); Esto regresa un <Observable> (podemos verlo situando el cursor encima de get)
   }
 }
