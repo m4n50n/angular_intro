@@ -8,7 +8,7 @@ Curso Udemy - ***Angular: De cero a experto***.
 
 |Comando|Explicación|
 |:----------|:-----------|
-|`ng --version`|Comprobar la versión de Angular CLI.<br>https://angular.io/cli/version|
+|`ng version`|Comprobar la versión de Angular CLI.<br>https://angular.io/cli/version|
 |`ng new nombre_proyecto`|Crear un nuevo proyecto en el directorio actual.<br>https://angular.io/cli/new|
 |`ng serve`|Construir e iniciar el proyecto. Con `-o` ordenamos que se abra el navegador al terminar.<br>https://angular.io/cli/serve|
 |`ng generate component heroes/listado` o con parámetros abreviados `ng g c heroes/listado`|Crear un componente automáticamente (debemos estar situados en el directorio raíz del proyecto en la terminal). En este caso crearía el componente listado dentro de la carpeta `/app/heroes`. Esto creará todos los ficheros necesarios para el nuevo componente y además actualizará el fichero de módulo `app-modules.ts` (o el que corresponda en caso de estar dentro de un módulo concreto). <br> - Si añadimos `--skipTests` al comando, no creará el archivo de tests (<i>nombre.component.spec.ts</i>). <br> - Si añadimos `-is` al comando, no creará el archivo de estilos (<i>nombre.component.css</i>).|
