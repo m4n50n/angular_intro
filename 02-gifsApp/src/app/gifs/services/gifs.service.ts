@@ -57,7 +57,7 @@ export class GifsService {
     // Como el get es de tipo genérico podemos asignarle la interfaz que va a devolver
     // Se interpretaría como que get va a traer una información y esa información va a tener el formato de la interfaz SearchGifsResponse
     this.http.get<SearchGifsResponse>(`${this.serviceUrl}/search`, {params: params}) // Cuando en los objetos el nombre de una propiedad es igual al nombre de la variable, podemos poner directamente { params }
-      .subscribe((respuesta) => { // Aquí respuesta no tiene tipado porque ya hemos puesto el genérico en la línea de arriba
+      .subscribe((respuesta) => { // Aquí respuesta no tiene tipado porque ya hemos puesto el genérico en la línea de arriba. Subscribe es parecido al then y se ejecutará cuando tengamos una respuesta
         console.log(respuesta);
         this.resultados = respuesta.data;
         localStorage.setItem("resultados", JSON.stringify(this.resultados));
