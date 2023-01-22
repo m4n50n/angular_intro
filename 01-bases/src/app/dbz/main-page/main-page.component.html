@@ -7,6 +7,10 @@
   </div>
 
   <div class="col">
-    <app-agregar [nuevo]="nuevo"></app-agregar>
+    <app-agregar
+      [nuevo]="nuevo"      
+    >
+    <!-- (onNuevoPersonaje)="agregarNuevoPersonaje($event)" --> <!-- Colocando este atributo dentro de <app-agregar> recibiremos lo que emita el elemento hijo e indicaremos qué hacer. $event será de tipo Personaje, igual que el EventEmitter, que se ha configurado que devuelva un Personaje mediante los genéricos -->
+    </app-agregar>
   </div>
 </div>

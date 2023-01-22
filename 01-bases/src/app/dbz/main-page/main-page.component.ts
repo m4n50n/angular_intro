@@ -21,4 +21,10 @@ export class MainPageComponent {
     nombre: "Maestro Roshi",
     poder: 20999
   }  
+
+  // Comentarmos los siguiente porque finalmente usaremos el servicio para agregar el personaje, pero esta sería la manera correcta de ejecutar esta función con datos que vienen emitidos desde el componente hijo
+  // agregarNuevoPersonaje(personajeRecibido: Personaje) {
+  //   console.log("Personaje Recibido:", personajeRecibido);
+  //   this.personajes.push(personajeRecibido);
+  // }
 }
